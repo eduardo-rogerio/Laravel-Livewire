@@ -1,6 +1,6 @@
-<div class="py-4">
+<div>
     <x-slot name="header">
-        Criar Registro
+        Editando Registro
     </x-slot>
 
     @if(session()->has('$message'))
@@ -8,7 +8,8 @@
             {{ session('$message') }}
         </div>
     @endif
-    <form action="" wire:submit.prevent="createExpense">
+
+    <form action="" wire:submit.prevent="updateExpense">
         <p>
             <label>Descrição Registro</label>
             <input type="text" wire:model="description" class="shadow border-t">
@@ -33,7 +34,6 @@
             @error('type')
             <span class="error">{{ $message }}</span> @enderror
         </p>
-        <button type="submit">Criar Registro</button>
+        <button type="submit">Atualizar Registro</button>
     </form>
-
 </div>
