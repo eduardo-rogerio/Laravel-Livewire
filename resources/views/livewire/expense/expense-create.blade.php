@@ -1,15 +1,24 @@
 <div>
+    @if(session()->has('$message'))
+        <div class="alert alert-success">
+            {{ session('$message') }}
+        </div>
+    @endif
     <h3>Criar Registro</h3>
     <hr>
     <form action="" wire:submit.prevent="createExpense">
         <p>
             <label>Descrição Registro</label>
             <input type="text" wire:model="description" class="shadow border-t">
+            @error('description')
+            <span class="error">{{ $message }}</span> @enderror
         </p>
 
         <p>
             <label>Valor do Registro</label>
             <input type="text" wire:model="amount" class="shadow border-t">
+            @error('amount')
+            <span class="error">{{ $message }}</span> @enderror
         </p>
 
         <p>
@@ -19,6 +28,8 @@
                 <option value="1">Entrada</option>
                 <option value="2">Saída</option>
             </select>
+            @error('type')
+            <span class="error">{{ $message }}</span> @enderror
         </p>
         <button type="submit">Criar Registro</button>
     </form>

@@ -10,18 +10,21 @@ class ExpenseCreate extends Component
     public $amount;
     public $description;
     public $type;
+
     public function render()
     {
         return view('livewire.expense.expense-create');
     }
 
+    protected $rules = [
+        'amount' => 'required',
+        'description' => 'required',
+        'type' => 'required',
+    ];
+
     public function createExpense()
     {
-        $this->validate([
-            'amount' => 'required',
-            'description' => 'required',
-            'type' => 'required',
-        ]);
+        $this->validate();
 
         Expenses::create([
             'amount' => $this->amount,
@@ -29,6 +32,8 @@ class ExpenseCreate extends Component
             'type' => $this->type,
             'user_id' => '1',
         ]);
+
+        session()->flash('message', 'Expense created successfully.');
 
         $this->reset();
     }
