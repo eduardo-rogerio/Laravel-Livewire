@@ -1,11 +1,13 @@
 <div>
+    <x-slot name="header">
+        Criar Registro
+    </x-slot>
+
     @if(session()->has('$message'))
         <div class="alert alert-success">
             {{ session('$message') }}
         </div>
     @endif
-    <h3>Criar Registro</h3>
-    <hr>
     <form action="" wire:submit.prevent="createExpense">
         <p>
             <label>Descrição Registro</label>
@@ -33,4 +35,5 @@
         </p>
         <button type="submit">Criar Registro</button>
     </form>
+
 </div>
