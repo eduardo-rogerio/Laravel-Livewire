@@ -1,13 +1,9 @@
 <div>
+    @include('includes.message')
+
     <x-slot name="header">
         Editando Registro
     </x-slot>
-
-    @if(session()->has('$message'))
-        <div class="alert alert-success">
-            {{ session('$message') }}
-        </div>
-    @endif
 
     <form action="" wire:submit.prevent="updateExpense">
         <p>

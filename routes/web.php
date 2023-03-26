@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Expense\ExpenseCreate;
 use App\Http\Livewire\Expense\ExpenseEdit;
+use App\Http\Livewire\Expense\ExpenseList;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,8 @@ Route::middleware(['auth:sanctum', 'verified'])
                     ->name('create');
                 Route::get('/edit/{expense}', ExpenseEdit::class)
                     ->name('edit');
+                Route::get('/', ExpenseList::class)
+                    ->name('index');
             });
     });
 

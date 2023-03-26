@@ -1,13 +1,10 @@
 <div class="py-4">
+    @include('includes.message')
+
     <x-slot name="header">
         Criar Registro
     </x-slot>
 
-    @if(session()->has('$message'))
-        <div class="alert alert-success">
-            {{ session('$message') }}
-        </div>
-    @endif
     <form action="" wire:submit.prevent="createExpense">
         <p>
             <label>Descrição Registro</label>
