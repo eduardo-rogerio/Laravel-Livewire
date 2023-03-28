@@ -24,7 +24,7 @@ class ExpenseCreate extends Component
         'amount' => 'required|numeric',
         'description' => 'required',
         'type' => 'required',
-        'photo' => 'image|max:4098', // 4MB Max
+        'photo' => 'image|max:4098|nullable', // 4MB Max
     ];
 
     public function createExpense()
