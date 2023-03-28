@@ -29,7 +29,7 @@
                     <span
                         class="@if($exp->type == 1) bg-indigo-500 @else bg-red-500 @endif">${{number_format($exp->amount,2,',','.')}}
                 </td>
-                <td class="px-4 py-2 border">{{$exp->created_at->format('d/m/Y H:i:s')}}</td>
+                <td class="px-4 py-2 border">{{$exp->expense_date ? $exp->expense_date: $exp->created_at->format('d/m/Y H:i:s')}}</td>
                 <td class="px-4 py-4 border">
                     <a href="{{route('expenses.edit', $exp->id)}}"
                        class="px-4 py-2 border rounded bg-indigo-500 text-white">Editar</a>

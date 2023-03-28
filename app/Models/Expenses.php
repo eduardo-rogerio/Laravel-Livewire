@@ -32,6 +32,12 @@ class Expenses extends Model
         return $this->attributes['amount'] = $value / 100;
     }
 
+    public function setExpenseDateAttribute($value)
+    {
+        $this->attributes['expense_date'] = (\DateTime::createFromFormat('d/m/Y H:i:s', $value)) ? \DateTime::createFromFormat('d/m/Y H:i:s', $value)
+            ->format('Y/m/d H:i:s') : null;
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

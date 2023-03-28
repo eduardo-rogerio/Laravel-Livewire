@@ -24,7 +24,7 @@
             <p class="w-full px-3 mb-6 md:mb-0">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Valor do
                     Registro</label>
-                <input type="text" name="amount" wire:model="amount"
+                <input type="number" name="amount" wire:model="amount"
                        class="block appearance-none w-full bg-gray-200 border @error('amount') border-red-500 @else border-gray-200 @enderror  text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
 
             @error('amount')
@@ -58,6 +58,18 @@
                     <img src="{{$photo->temporaryUrl()}}" alt="" width="150" class="my-3">
             @endif
             @error('photo')
+            <h5 class="text-red-500 text-xs italic">{{$message}}</h5>
+            @enderror
+            </p>
+
+            </p>
+
+            <p class="w-full px-3 mb-6 md:mb-0">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Data do Comprovante,
+                    pode deixar em branco se o dia for hoje</label>
+                <input type="datetime-local" name="expense_date" wire:model="expenseDate"
+                       class="block appearance-none w-full bg-gray-200 border text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+            @error('expense_date')
             <h5 class="text-red-500 text-xs italic">{{$message}}</h5>
             @enderror
             </p>

@@ -14,6 +14,7 @@ class ExpenseCreate extends Component
     public $description;
     public $type;
     public $photo;
+    public $expenseDate;
 
     public function render()
     {
@@ -40,6 +41,7 @@ class ExpenseCreate extends Component
             'type' => $this->type,
             'user_id' => '1',
             'photo' => $photo ?? null,
+            'expense_date' => $this->expenseDate ?? null,
         ]);
 
         session()->flash('message', 'Expense created successfully.');
