@@ -14,6 +14,12 @@ class Expenses extends Model
         'amount',
         'description',
         'user_id',
+        'photo',
+        'expense_date',
+    ];
+
+    protected $dates = [
+        'expense_date',
     ];
 
     public function setAmountAttribute($value)
