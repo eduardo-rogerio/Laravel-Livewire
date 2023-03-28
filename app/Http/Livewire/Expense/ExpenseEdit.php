@@ -12,7 +12,7 @@ class ExpenseEdit extends Component
     public $type;
     public Expenses $expense;
     protected $rules = [
-        'amount' => 'required',
+        'amount' => 'required|numeric',
         'description' => 'required',
         'type' => 'required',
     ];

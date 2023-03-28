@@ -17,7 +17,7 @@ class ExpenseCreate extends Component
     }
 
     protected $rules = [
-        'amount' => 'required',
+        'amount' => 'required|numeric',
         'description' => 'required',
         'type' => 'required',
     ];

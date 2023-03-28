@@ -16,6 +16,16 @@ class Expenses extends Model
         'user_id',
     ];
 
+    public function setAmountAttribute($value)
+    {
+        $this->attributes['amount'] = $value * 100;
+    }
+
+    public function getAmountAttribute($value)
+    {
+        return $this->attributes['amount'] = $value / 100;
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
