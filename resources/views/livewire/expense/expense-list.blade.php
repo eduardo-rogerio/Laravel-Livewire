@@ -41,6 +41,8 @@
         </tbody>
     </table>
     <div class="w-full mx-auto mt-10">
-        {{$expenses->links()}}
+        @if(count($expenses))
+            {{$expenses->links()}}
+        @endif
     </div>
 </div>
