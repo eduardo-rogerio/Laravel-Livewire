@@ -60,7 +60,7 @@
             <h5 class="text-red-500 text-xs italic">{{$message}}</h5>
             @enderror
             </p>
-
+            <img src="{{route('expenses.photo', $expense->id)}}" alt="" width="150" class="my-3">
         </div>
         <div class="w-full py-4 px-3 mb-6 md:mb-0">
 

@@ -47,7 +47,7 @@ class ExpenseEdit extends Component
             'amount' => $this->amount,
             'description' => $this->description,
             'type' => $this->type,
-            'photo' => $this->photo ?? null,
+            'photo' => $this->photo ?? $this->expense->photo,
         ]);
 
         session()->flash('message', 'Expense updated successfully.');
