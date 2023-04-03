@@ -4,7 +4,7 @@
         Meus Registros
     </x-slot>
 
-    <div class="w-full mx-auto text-right mb-4">
+    <div class="w-full mx-auto text-right mt-4">
         <a href="{{route('expenses.create')}}" class="px-4 py-2 border rounded bg-indigo-500 text-white">Criar
             Registro</a>
     </div>
